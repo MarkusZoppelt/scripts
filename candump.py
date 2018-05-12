@@ -1,3 +1,4 @@
+#! /usr/local/bin/python3
 from pyvit import can
 from pyvit.hw.cantact import CantactDev
 
