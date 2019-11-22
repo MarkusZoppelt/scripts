@@ -3,6 +3,8 @@ Partition the disk
 
 `cfdisk /dev/sda`
 
+chose `dos`
+
 After that create boot loader partition:
 
 `New-> Partition Size: 100M -> primary -> Bootable`
@@ -37,7 +39,7 @@ Mount them:
 
 Install the base and base-devel systems, DE + some other tools:
 
-`pacstrap -i /mnt base base-devel gdm gnomenetworkmanager vim zsh git`
+`pacstrap -i /mnt base base-devel linux linux-firmware gdm gnome networkmanager vim zsh git`
 
 Generate the fstab:
 
@@ -79,7 +81,7 @@ Set the root password:
 
 Add a system user:
 
-`useradd -m -g users -G wheel,games,power,optical,storage,scanner,lp,audio,video -s /bin/zsh mz`
+`useradd -m -g users -G wheel,audio,video -s /bin/zsh mz`
 
 Set the system user password:
 
