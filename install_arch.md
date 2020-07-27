@@ -7,7 +7,7 @@ chose `dos`
 
 After that create boot loader partition:
 
-`New-> Partition Size: 100M -> primary -> Bootable`
+`New-> Partition Size: 200M -> primary -> Bootable`
 
 The last one will be the root partition. Use free space
 
@@ -87,9 +87,9 @@ Set the system user password:
 
 `passwd mz`
 
-Install sudo (base-devel) and the boot loader grub and os-prober:
+Install sudo (base-devel) and the boot loader grub:
 
-`pacman -S sudo grub-bios os-prober`
+`pacman -S sudo grub-bios`
 
 Allow the system user to use sudo and run commands (temporary) as root:
 
