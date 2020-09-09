@@ -1,4 +1,7 @@
 #!/bin/sh
 
 cd ~/Documents/*/Notes
-vim "`date`".txt
+filename="`date`"
+touch "$filename"
+gpg -r markus@zoppelt.net -e "$filename" && rm "$filename"
+vim "$filename".gpg
