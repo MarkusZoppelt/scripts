@@ -1,7 +1,20 @@
 #!/bin/sh
 
 cd ~/Documents/*/Notes
-filename="`date`"
-touch "$filename"
-gpg -r markus@zoppelt.net -e "$filename" && rm "$filename"
-vim "$filename".gpg
+
+if [[ $# > 0 ]]; then
+    if [[ $1 == 'n' ]]; then
+        filename="`date`"
+        touch "$filename"
+        gpg -r markus@zoppelt.net -e "$filename" && rm "$filename"
+        vim "$filename".gpg
+    fi
+    if [[ $1 == 'l' ]]; then
+        vim +Explore
+    fi
+else
+    vim +NERDTree
+fi
+
+
+
