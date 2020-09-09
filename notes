@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ~/Documents/*/Notes
+vim "`date`".txt
