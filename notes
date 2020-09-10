@@ -1,6 +1,12 @@
-#!/bin/sh
+#!/bin/zsh
 
-cd ~/Documents/*/Notes
+# Please make sure you are using 'jamessan/vim-gnupg' plugin
+
+if  [[ ! -d ~/Documents/Notes ]] && [[ ! -d ~/Documents/Work/Notes ]] && [[ ! -d ~/Documents/Private/Notes ]]; then
+	mkdir -p ~/Documents/Notes
+fi
+
+cd ~/Documents/**/Notes
 
 if [[ $# > 0 ]]; then
     if [[ $1 == 'n' ]]; then
@@ -9,6 +15,15 @@ if [[ $# > 0 ]]; then
         gpg -r markus@zoppelt.net -e "$filename" && rm "$filename"
         vim "$filename".gpg
     fi
+
+    if [[ $1 == "-h" ]] || [[ $1 == 'h' ]]; then
+	    echo "Usage: notes [COMMAND]"
+	    echo "Commands:"
+	    echo "  n        Create new note"
+	    echo "  l        List notes"
+	    echo "  h        Show this message and exit"
+    fi
+
     if [[ $1 == 'l' ]]; then
         vim +Explore
     fi
