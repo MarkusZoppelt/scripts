@@ -39,7 +39,7 @@ Mount them:
 
 Install the base and base-devel systems, DE + some other tools:
 
-`pacstrap -i /mnt base base-devel linux linux-firmware gdm gnome networkmanager vim zsh git`
+`pacstrap -i /mnt base base-devel linux linux-firmware gdm gnome networkmanager gvim zsh git`
 
 Generate the fstab:
 
