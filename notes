@@ -28,7 +28,7 @@ if [[ $# > 0 ]]; then
         vim +Explore
     fi
 else
-    vim +NERDTree
+    vim +Explore
 fi
 
 
